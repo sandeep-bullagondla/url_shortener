@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+{% if name %}
+  <h1 style="color: #1E88E5; font-size: 36px; text-align: center; margin-top: 50px;">Welcome to URL Shortener page {{ name }}</h1>
+{% else %}
+  <h1 style="color: #1E88E5; font-size: 36px; text-align: center; margin-top: 50px;">Welcome to URL Shortener page</h1>
+{% endif %}
+{% endblock %}

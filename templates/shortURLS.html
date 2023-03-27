@@ -1,0 +1,68 @@
+<!-- user_page.html -->
+{% extends 'layout.html' %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Hey {{ name }}! Your Shortened URLs are:</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Original URL</th>
+          <th scope="col">Short URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in short_urls %}
+          <tr>
+            <td>{{ row.original_url }}</td>
+            <td><a href="{{ row.short_url }}">{{ row.short_url }}</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+</style>
